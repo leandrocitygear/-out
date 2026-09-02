@@ -1,85 +1,114 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
+import { onMounted, ref } from 'vue';
+
+interface AppProject {
+  id: number;
+  name: string;
+  description: string;
+  status: string;
+  platforms: string[];
+}
+
+const apps = ref<AppProject[]>([]);
+
+const loading = ref(true);
+
+const error = ref<string | null>(null);
+
+
+async function loadApps() {
+
+  try {
+
+    loading.value = true;
+
+    error.value = null;
+
+    const response = await fetch('/api/apps.php');
+
+    if (!response.ok) {
+      throw new Error(
+        `Server returned ${response.status}`
+      );
+    }
+
+    apps.value = await response.json();
+
+  } catch (err) {
+
+    error.value =
+      err instanceof Error
+        ? err.message
+        : 'Failed to load applications.';
+
+  } finally {
+
+    loading.value = false;
+
+  }
+
+}
+
+
+onMounted(() => {
+
+  loadApps();
+
+});
+
 </script>
 
+
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <main>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+    <h1>=out</h1>
 
-  <RouterView />
+    <p>
+      Applications built in the =out series.
+    </p>
+
+
+    <p v-if="loading">
+      Loading applications...
+    </p>
+
+
+    <p v-if="error">
+      {{ error }}
+    </p>
+
+
+    <section v-if="!loading && !error">
+
+      <article
+        v-for="app in apps"
+        :key="app.id"
+      >
+
+        <h2>
+          {{ app.name }}
+        </h2>
+
+        <p>
+          {{ app.description }}
+        </p>
+
+        <p>
+          Status: {{ app.status }}
+        </p>
+
+        <p>
+          Platforms:
+          {{ app.platforms.join(', ') }}
+        </p>
+
+      </article>
+
+    </section>
+
+  </main>
+
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
