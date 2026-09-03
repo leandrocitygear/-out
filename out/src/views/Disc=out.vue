@@ -62,53 +62,90 @@ onMounted(() => {
 
 <template>
 
-  <main>
+  <main class="container">
 
-    <h1>=out</h1>
+    <h1 class="logo">/disc=out</h1>
 
-    <p>
-      Applications built in the =out series.
-    </p>
+    <div class="description">
 
-
-    <p v-if="loading">
-      Loading applications...
-    </p>
-
-
-    <p v-if="error">
-      {{ error }}
-    </p>
-
-
-    <section v-if="!loading && !error">
-
-      <article
-        v-for="app in apps"
-        :key="app.id"
-      >
-
-        <h2>
-          {{ app.name }}
-        </h2>
-
-        <p>
-          {{ app.description }}
-        </p>
-
-        <p>
-          Status: {{ app.status }}
-        </p>
-
-        <p>
-          Platforms:
-          {{ app.platforms.join(', ') }}
-        </p>
-
-      </article>
-
-    </section>
+      <p>
+        Applications built in the =out series.
+      </p>
+  
+  
+      <p v-if="loading">
+        Loading applications...
+      </p>
+  
+  
+      <p v-if="error">
+        {{ error }}
+      </p>
+  
+  
+      <section v-if="!loading && !error">
+  
+        <article
+          v-for="app in apps"
+          :key="app.id"
+        >
+  
+          <h2>
+            {{ app.name }}
+          </h2>
+  
+          <p>
+            {{ app.description }}
+          </p>
+  
+          <p>
+            Status: {{ app.status }}
+          </p>
+  
+          <p>
+            Platforms:
+            {{ app.platforms.join(', ') }}
+          </p>
+  
+        </article>
+  
+      </section>
+    </div>
 
   </main>
 
 </template>
+
+<style scoped>
+@font-face {
+  font-family:'disc';
+  src: url('../font/disc.TTF') format('truetype');
+}
+
+.logo {
+  font-family: 'disc', sans-serif;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.container {
+  /* min-height: 100vh; */
+  padding: px;
+  /* background: #ffffff; */
+  border: solid white 1px;
+  width: 800px;
+  height: 600px;
+  margin: 0;
+  color: white;
+  position: relative;
+}
+
+.description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+</style>

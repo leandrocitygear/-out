@@ -2,26 +2,51 @@
 </script>
 
 <template>
-  <main class="home">
-      <h1>=out</h1>
+  <main class="container">
+      <h1 class="logo">/home=out</h1>
 
-      <p>
-        Applications built in the =out series.
-      </p>
+      <div class="description">
+
+        <p>
+          Applications built in the =out series.
+        </p>
+      </div>
 
     <!-- Your application cards will go here -->
   </main>
 </template>
 
 <style scoped>
-.home {
+
+@font-face {
+  font-family:'disc';
+  src: url('../font/disc.TTF') format('truetype');
+}
+
+.logo {
+  font-family: 'disc', sans-serif;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container {
   /* min-height: 100vh; */
-  padding: 60px;
+  padding: px;
   /* background: #ffffff; */
   border: solid white 1px;
-  width: 300px;
+  width: 800px;
+  height: 600px;
   margin: 0;
   color: white;
+  position: relative;
+}
+
+.description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 

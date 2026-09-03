@@ -1,7 +1,7 @@
 ```vue
 <script setup lang="ts">
-import HomeView from './views/HomeView.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const backgroundImages = [
   '/bg_images/1.jpg',
@@ -52,22 +52,24 @@ onUnmounted(() => {
         }"
       ></div>
     </Transition>
-
+    
     <div class="overlaid"></div>
-
+    
     <div class="viewContainer">
+      <h4>STAYING.IN.GOING.OUT</h4>
       <header>
         <nav>
-          <button class="navBtn">
-            <img  class="navIcons" src="./components/icons/home.png" alt="">
-          </button>
-          <button class="navBtn">
-            <img  class="navIcons" src="./components/icons/music.png" alt="">
-          </button>
+          <RouterLink to="/" class="navBtn">
+            <img  class="navIcons" src="./components/icons/home.png" alt="Home">
+          </RouterLink>
+          <RouterLink to="/disc-out" class="navBtn">
+            <img  class="navIcons" src="./components/icons/music.png" alt="Disc=out">
+          </RouterLink>
   
         </nav>
+
       </header>
-      <HomeView />
+      <RouterView />
     </div>
 
   </main>
@@ -148,11 +150,23 @@ body {
 header {
   /* border: solid white 1px; */
   margin-bottom: 20px;
+  position: relative;
 }
+
 
 nav {
   display: flex;
   gap: 10px;
+  /* border: solid white 1px; */
+
+}
+
+h4 {
+  color: white;
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  /* border: solid 1px white; */
 }
 
 .navBtn {
@@ -163,6 +177,7 @@ nav {
   cursor: pointer;
   color: white;
   position: relative;
+  text-decoration: none;
 }
 
 .navIcons {
@@ -179,10 +194,10 @@ nav {
  background-color: white;
 }
 
-.navBtn:focus {
+.navBtn.router-link-active {
  background-color: white;
 }
-.navBtn:focus .navIcons {
+.navBtn.router-link-active .navIcons {
    filter: invert(1);
 }
 
@@ -191,7 +206,7 @@ nav {
   position: relative;
   z-index: 2;
 
-  border: 1px solid white;
+  border: 3px solid white;
   padding: 10px;
   margin: 0;
 
