@@ -1,9 +1,20 @@
 <?php
 
-header('Content-Type: application/json');
 
-header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Origin: https://out-omega-beryl.vercel.app");
+header("Access-Control-Allow-Methods: GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
+// Handle browser preflight requests
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(204);
+    exit;
+    }
+    
+    header('Content-Type: application/json');
+    
+    header('Access-Control-Allow-Origin: *');
+    
 $apps = [
     [
         'id' => 1,
