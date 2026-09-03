@@ -16,9 +16,9 @@
 <style scoped>
 .home {
   /* min-height: 100vh; */
-  /* padding: 60px; */
+  padding: 60px;
   /* background: #ffffff; */
-  border: solid blue 1px;
+  border: solid white 1px;
   width: 300px;
   margin: 0;
   color: white;

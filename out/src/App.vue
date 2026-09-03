@@ -32,7 +32,7 @@ onMounted(() => {
 
     currentBackground.value =
       backgroundImages[currentIndex];
-  }, 10000);
+  }, 15000);
 });
 
 onUnmounted(() => {
@@ -56,6 +56,17 @@ onUnmounted(() => {
     <div class="overlaid"></div>
 
     <div class="viewContainer">
+      <header>
+        <nav>
+          <button class="navBtn">
+            <img  class="navIcons" src="./components/icons/home.png" alt="">
+          </button>
+          <button class="navBtn">
+            <img  class="navIcons" src="./components/icons/music.png" alt="">
+          </button>
+  
+        </nav>
+      </header>
       <HomeView />
     </div>
 
@@ -132,6 +143,47 @@ body {
   background: rgba(0, 0, 0, 0.5);
 
   z-index: 1;
+}
+
+header {
+  /* border: solid white 1px; */
+  margin-bottom: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+.navBtn {
+  border: solid 1px white;
+  background-color: transparent;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  color: white;
+  position: relative;
+}
+
+.navIcons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.navBtn:hover .navIcons {
+   filter: invert(1);
+}
+
+.navBtn:hover {
+ background-color: white;
+}
+
+.navBtn:focus {
+ background-color: white;
+}
+.navBtn:focus .navIcons {
+   filter: invert(1);
 }
 
 /* Content */
