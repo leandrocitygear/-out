@@ -25,7 +25,7 @@ async function loadApps() {
 
     error.value = null;
 
-    const response = await fetch(`${import.meta.env.API_URL}/api/apps.php`);
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/apps.php`);
 
     if (!response.ok) {
       throw new Error(
