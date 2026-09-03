@@ -32,7 +32,7 @@ onMounted(() => {
 
     currentBackground.value =
       backgroundImages[currentIndex];
-  }, 15000);
+  }, 25000);
 });
 
 onUnmounted(() => {
