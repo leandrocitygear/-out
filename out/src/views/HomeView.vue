@@ -1,9 +1,29 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
+  <main class="home">
+      <h1>=out</h1>
+
+      <p>
+        Applications built in the =out series.
+      </p>
+
+    <!-- Your application cards will go here -->
   </main>
 </template>
+
+<style scoped>
+.home {
+  /* min-height: 100vh; */
+  /* padding: 60px; */
+  /* background: #ffffff; */
+  border: solid blue 1px;
+  width: 300px;
+  margin: 0;
+  color: white;
+}
+
+
+
+</style>
