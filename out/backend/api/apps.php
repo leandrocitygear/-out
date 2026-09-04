@@ -20,7 +20,7 @@ $apps = [
         'id' => 1,
         'name' => 'Disc=out',
         'description' => 'A desktop music player built with Electron.',
-        'status' => 'In Development',
+        'status' => 'Released',
         'platforms' => [
             'Windows',
             'macOS',
