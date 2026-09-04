@@ -24,7 +24,8 @@ $apps = [
         'platforms' => [
             'Windows',
             'macOS',
-            'Linux'
+            'Ubuntu',
+            'Fedora'
         ],
 
         'iconImage' => './icon_images/disc-out.png',
@@ -41,9 +42,10 @@ $apps = [
         ],
 
         'downloads' => [
-            'Windows' => '',
-            'macOS' => '',
-            'Linux' => ''
+            'Windows' => 'https://github.com/leandrocitygear/Music-Player/releases/download/v1.0.0/Disc-Out-Setup.exe',
+            'macOS' => 'https://github.com/leandrocitygear/Music-Player/releases/download/v1.0.0/Disc-Out-macOS.dmg',
+            'Ubuntu' => 'https://github.com/leandrocitygear/Music-Player/releases/download/v1.0.0/Disc-Out-Ubuntu.deb',
+            'Fedora' => 'https://github.com/leandrocitygear/Music-Player/releases/download/v1.0.0/Disc-Out-Fedora.rpm'
         ]
     ]
 
