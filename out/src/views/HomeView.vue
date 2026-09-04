@@ -116,7 +116,7 @@ onMounted(async () => {
 @media (max-width: 768px) {
   .description {
     position: absolute;
-    bottom: 50px;
+    bottom: 60px;
     left: 0;
 
     height: 50%;
