@@ -237,7 +237,7 @@ onUnmounted(() => {
   .screenshotContainer {
     top: 25%;
   /* height: 100%; */
-  width: 90%;
+  width: 80%;
   }
 }
 
