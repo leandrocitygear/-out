@@ -53,7 +53,7 @@ async function loadApps() {
         screenshotInterval = setInterval(() => {
           currentScreenshot.value =
             (currentScreenshot.value + 1) % screenshots.length;
-        }, 10000);
+        }, 8000);
       }
     }
 
