@@ -86,9 +86,9 @@ onUnmounted(() => {
 
     <div class="description">
 
-        <p>
+        <!-- <p>
           Applications built in the =out series.
-        </p>
+        </p> -->
   
         <p v-if="loading">
           Loading applications...
@@ -104,6 +104,8 @@ onUnmounted(() => {
           v-for="app in apps"
           :key="app.id"
         >
+
+          <img class="iconlogo" :src="app.iconImage" alt="">
 
           <h2>
             {{ app.name }}
@@ -121,6 +123,19 @@ onUnmounted(() => {
             Platforms:
             {{ app.platforms.join(', ') }}
           </p>
+          
+          <div class="downloadCon">
+             <a
+              v-for="(download, platform) in app.downloads"
+              :key="platform"
+              :href="download"
+              target=""
+              rel="noopener noreferrer"
+            >
+              Download for {{ platform }}
+            </a>
+          </div>
+
 
           
         </article>
@@ -176,7 +191,7 @@ onUnmounted(() => {
 }
 
 .container {
-  border: solid white 1px;
+  /* border: solid white 1px; */
   width: 100%;
   height: 92%;
   margin: 0;
@@ -190,7 +205,18 @@ onUnmounted(() => {
   left: 0;
   /* height: 100%; */
   /* width: 100%; */
-  border: solid;
+  /* border: solid; */
+}
+
+@media (max-height: 768px) {
+  .description {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    /* height: 100%; */
+    /* width: 100%; */
+    /* border: solid 1px; */
+  }
 }
 
 .screenshotContainer {
@@ -205,6 +231,14 @@ onUnmounted(() => {
 
   transform: translate(-50%, -50%);
   /* border: solid ; */
+}
+
+@media (max-width: 768px) {
+  .screenshotContainer {
+    top: 25%;
+  /* height: 100%; */
+  width: 90%;
+  }
 }
 
 .screenshot {
@@ -229,6 +263,48 @@ onUnmounted(() => {
 .screenshotFade-enter-to,
 .screenshotFade-leave-from {
   opacity: 1;
+}
+
+.iconlogo {
+  height: 60px;
+  width: 60px;
+}
+
+.downloadCon {
+  /* border: solid 1px white; */
+  /* padding: 6px; */
+  display: flex;
+  justify-content: space-evenly;
+  gap: 6px;
+} 
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  border: solid 1px white;
+  /* margin-right: 6px; */
+  padding: 6px;
+   height: 80px;
+  width: 80px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 15px;
+} 
+
+@media (max-width: 395px) {
+  a {
+  padding: 2px;
+    height: 65px;
+  width: 65px;
+  font-size: 13px;
+  }
+}
+
+a:hover {
+  background-color: white;
+  color: black;
 }
 
 </style>

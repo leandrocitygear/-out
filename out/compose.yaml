@@ -2,7 +2,7 @@ services:
   server:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./backend/Dockerfile
     ports:
       - "9000:80"
     restart: unless-stopped
@@ -15,7 +15,7 @@ services:
 
         # PHP API changes
         - action: rebuild
-          path: ./api
+          path: ./backend/api
 
         # Public assets
         - action: rebuild
@@ -23,7 +23,7 @@ services:
 
         # Apache configuration
         - action: rebuild
-          path: ./apache.conf
+          path: ./backend/apache.conf
 
         # Dependencies changed
         - action: rebuild

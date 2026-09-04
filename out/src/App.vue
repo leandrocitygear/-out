@@ -206,7 +206,7 @@ h4 {
   position: relative;
   z-index: 2;
 
-  border: 3px solid white;
+  border: 1px solid white;
   padding: 10px;
   margin: 0;
 
