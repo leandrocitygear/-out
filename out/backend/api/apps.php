@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $apps = [
     [
         'id' => 1,
-        'name' => 'disc=out',
+        'name' => 'Disc=out',
         'description' => 'A desktop music player built with Electron.',
         'status' => 'In Development',
         'platforms' => [
