@@ -149,7 +149,7 @@ body {
 
 header {
   /* border: solid white 1px; */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
 }
 

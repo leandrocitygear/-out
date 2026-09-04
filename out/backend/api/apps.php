@@ -25,18 +25,37 @@ $apps = [
             'Windows',
             'macOS',
             'Linux'
-        ]
-    ],
+        ],
 
-    [
-        'id' => 2,
-        'name' => 'UpBudget',
-        'description' => 'A personal finance application.',
-        'status' => 'In Development',
-        'platforms' => [
-            'Web'
+        'iconImage' => './icon_images/disc-out.png',
+
+        'screenshots' => [
+            './app_screenshots/disc-out-screenshots/Screenshot1.png',
+            './app_screenshots/disc-out-screenshots/Screenshot2.png',
+            './app_screenshots/disc-out-screenshots/Screenshot3.png',
+            './app_screenshots/disc-out-screenshots/Screenshot4.png',
+            './app_screenshots/disc-out-screenshots/Screenshot5.png',
+            './app_screenshots/disc-out-screenshots/Screenshot6.png',
+            './app_screenshots/disc-out-screenshots/Screenshot7.png',
+            './app_screenshots/disc-out-screenshots/Screenshot8.png'
+        ],
+
+        'downloads' => [
+            'Windows' => '',
+            'macOS' => '',
+            'Linux' => ''
         ]
     ]
+
+    // [
+    //     'id' => 2,
+    //     'name' => 'UpBudget',
+    //     'description' => 'A personal finance application.',
+    //     'status' => 'In Development',
+    //     'platforms' => [
+    //         'Web'
+    //     ]
+    // ]
 ];
 
 echo json_encode(

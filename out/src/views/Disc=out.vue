@@ -126,18 +126,18 @@ onMounted(() => {
   font-family: 'disc', sans-serif;
   font-size: 50px;
   position: absolute;
-  top: 0;
+  top: -30px;
   left: 0;
 }
 
 
 .container {
   /* min-height: 100vh; */
-  padding: px;
+  /* padding: px; */
   /* background: #ffffff; */
   border: solid white 1px;
-  width: 800px;
-  height: 600px;
+ width: 100%;
+  height: 92%;
   margin: 0;
   color: white;
   position: relative;
