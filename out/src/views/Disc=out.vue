@@ -211,7 +211,7 @@ onUnmounted(() => {
 @media (max-height: 768px) {
   .description {
     position: absolute;
-    bottom: 40px;
+    bottom: 35px;
     left: 0;
     /* height: 100%; */
     /* width: 100%; */
